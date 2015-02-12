@@ -10,14 +10,15 @@ import UIKit
 import SpriteKit
 
 class Player: SKNode {
-    let leftWing = SKSpriteNode(imageNamed: "wing.png")
-    let rightWing = SKSpriteNode(imageNamed: "wing.png")
+    //let leftWing = SKSpriteNode(imageNamed: "wing.png")
+    //let rightWing = SKSpriteNode(imageNamed: "wing.png")
     let wingRadian = 1.3
     override init() {
         super.init()
         
         let sprite = SKSpriteNode(imageNamed: "bird.png")
         sprite.setScale(CGFloat(0.17))
+        //sprite.setScale(CGFloat(0.3))
         let physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.height / 2.0 - 2)
         let sh = SKShapeNode(circleOfRadius: sprite.size.height / 2.0 - 2)
         sh.fillColor = UIColor.blueColor()
@@ -26,7 +27,7 @@ class Player: SKNode {
         self.addChild(sprite)
         
         
-        
+        /*
         leftWing.anchorPoint = CGPoint(x: CGFloat(0.96), y: CGFloat(0.3))
         rightWing.anchorPoint = CGPoint(x: CGFloat(0.96), y: CGFloat(0.3))
         rightWing.xScale = rightWing.xScale * -1
@@ -36,6 +37,7 @@ class Player: SKNode {
         rightWing.zRotation = CGFloat(-wingRadian)
         sprite.addChild(leftWing)
         sprite.addChild(rightWing)
+*/
 }
 
     func jump() {
@@ -47,8 +49,8 @@ class Player: SKNode {
         let seq1 = SKAction.rotateByAngle(CGFloat(wingRadian), duration: NSTimeInterval(0.3))
         let seq2 = SKAction.rotateByAngle(CGFloat(-wingRadian), duration: NSTimeInterval(0.3))
         
-        leftWing.runAction(SKAction.sequence([seq2, seq1]))
-        rightWing.runAction(SKAction.sequence([seq1, seq2]))
+        //leftWing.runAction(SKAction.sequence([seq2, seq1]))
+        //rightWing.runAction(SKAction.sequence([seq1, seq2]))
     }
     
     required init?(coder aDecoder: NSCoder) {
